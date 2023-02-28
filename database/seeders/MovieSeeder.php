@@ -21,7 +21,6 @@ class MovieSeeder extends Seeder
             $new_movie->description = $movie['description'];
             $new_movie->thumb = $movie['thumb'];
             $new_movie->price = str_replace('$', '', $movie['price']);
-            $new_movie->title = $movie['title'];
             $new_movie->series = $movie['series'];
             $new_movie->sale_date = $movie['sale_date'];
             $new_movie->type = $movie['type'];
