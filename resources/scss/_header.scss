@@ -1,0 +1,52 @@
+header {
+    .top {
+        background-color: $primary;
+        padding-top: 0.25rem;
+        padding-bottom: 0.25rem;
+        text-align: end;
+
+        a {
+            color: white;
+            padding-left: 3.5rem;
+            font-size: 0.7rem;
+        }
+    }
+
+    .bottom {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+
+        img {
+            height: 75px;
+            width: auto;
+        }
+
+        ul {
+            display: flex;
+
+            a {
+                color: $grey;
+                padding-left: 0.75rem;
+
+                &:hover {
+                    color: $primary;
+                }
+            }
+        }
+
+        .searchbar {
+            border-bottom: 2px solid $primary;
+
+            input {
+                border: none;
+                text-align: end;
+            }
+
+            button {
+                border: none;
+                background-color: transparent;
+                cursor: pointer;
+            }
+        }
+    }
+}
