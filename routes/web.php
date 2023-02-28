@@ -24,6 +24,8 @@ Route::get('/characters', function () {
 
 Route::get('/comics', [MoviesController::class, 'index'])->name('comics');
 
+Route::get('/comics/{id}', [MoviesController::class, 'show'])->name('comics.show');
+
 Route::get('/movies', function () {
     return view('movies');
 })->name('movies');
