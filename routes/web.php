@@ -24,6 +24,10 @@ Route::get('/characters', function () {
 
 Route::get('/comics', [MoviesController::class, 'index'])->name('comics');
 
+Route::get('/comics/create', [MoviesController::class, 'create'])->name('comics.create');
+
+Route::post('/comics', [MoviesController::class, 'store'])->name('comics.store');
+
 Route::get('/comics/{id}', [MoviesController::class, 'show'])->name('comics.show');
 
 Route::get('/movies', function () {

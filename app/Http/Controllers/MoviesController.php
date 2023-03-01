@@ -21,7 +21,7 @@ class MoviesController extends Controller
      */
     public function create()
     {
-        //
+        return view('comics.create');
     }
 
     /**
@@ -29,7 +29,20 @@ class MoviesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+        $new_movie = new Movie();
+        $new_movie->title = $data['title'];
+        $new_movie->description = $data['description'];
+        $new_movie->thumb = $data['thumb'];
+        $new_movie->price = $data['price'];
+        $new_movie->series = $data['series'];
+        $new_movie->sale_date = $data['sale_date'];
+        $new_movie->type = $data['type'];
+        $new_movie->artists = $data['artists'];
+        $new_movie->writers = $data['writers'];
+        $new_movie->save();
+
+        return to_route('comics.show', $new_movie->id);
     }
 
     /**
