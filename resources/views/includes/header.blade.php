@@ -1,5 +1,5 @@
 @php
-    $menus = ['characters', 'comics', 'movies', 'tv', 'games', 'collectibles', 'videos', 'fans', 'news', 'shop']
+    $menus = ['characters', 'comics', 'movies', 'tv', 'games', 'collectibles', 'videos', 'fans', 'news', 'shop'];
 @endphp
 
 <header>
@@ -10,12 +10,12 @@
         </div>
     </div>
     <div class="bottom">
-        <div class="container d-flex align-center space-between">
-            <a href="{{route('home')}}"><img src="{{ Vite::asset('resources/images/dc-logo.png') }}" alt="Logo DC"></a>
+        <div class="container d-flex align-items-center justify-content-between">
+            <a href="{{ route('home') }}"><img src="{{ Vite::asset('resources/images/dc-logo.png') }}" alt="Logo DC"></a>
             <nav>
-                <ul>
-                    @foreach ( $menus as $menu )
-                        <li><a href="{{route($menu)}}">{{ strtoupper($menu) }}</a></li>                        
+                <ul class="m-0 p-0">
+                    @foreach ($menus as $menu)
+                        <li><a href="{{ route($menu) }}" class="fw-bold p-3">{{ strtoupper($menu) }}</a></li>
                     @endforeach
                 </ul>
             </nav>
