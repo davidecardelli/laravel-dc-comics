@@ -3,7 +3,8 @@
 @section('content')
     <main>
         <div class="container">
-            <form action="POST" action="{{ route('comics.store') }}">
+            <form method="POST" action="{{ route('comics.store') }}">
+                @csrf
                 <div class="row cols-2">
                     <div class="col">
                         {{-- title --}}
@@ -28,8 +29,8 @@
                     <div class="col">
                         {{-- description --}}
                         <div class="mb-3">
-                            <label for="exampleFormControlTextarea1" class="form-label">Description</label>
-                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" value="{{ old('description') }}"></textarea>
+                            <label for="description" class="form-label">Description</label>
+                            <textarea class="form-control" id="description" name="description" rows="3" value="{{ old('description') }}"></textarea>
                         </div>
                     </div>
                 </div>
@@ -46,8 +47,8 @@
                     <div class="col">
                         {{-- series --}}
                         <div class="mb-3">
-                            <label for="exampleFormControlInput1" class="form-label">Series</label>
-                            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Series"
+                            <label for="series" class="form-label">Series</label>
+                            <input type="text" class="form-control" id="series" name="series" placeholder="Series"
                                 value="{{ old('series') }}">
                         </div>
                     </div>

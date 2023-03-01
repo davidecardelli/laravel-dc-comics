@@ -6,7 +6,7 @@
             <ul>
                 <li>{{ $comics['title'] }}</li>
                 <li>{{ $comics['description'] }}</li>
-                <li>{{ $comics['thumb'] }}</li>
+                <li><img src="{{ $comics['thumb'] }}" alt="{{ $comics['title'] }}"></li>
                 <li>$ {{ $comics['price'] }}</li>
                 <li>{{ $comics['series'] }}</li>
                 <li>{{ $comics['sale_date'] }}</li>
