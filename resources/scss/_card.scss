@@ -4,7 +4,13 @@
             width: 150px;
             height: 150px;
             text-align: center;
+
+            &:hover {
+                box-shadow: 0 0 20px white;
+            }
         }
+
+
     }
 
     p {
