@@ -90,7 +90,10 @@
                     </div>
                 </div>
 
-                <div class="d-flex justify-content-end">
+                <div class="d-flex justify-content-between">
+                    <div>
+                        <a href="{{ route('comics') }}" class="btn btn-secondary mt-3">Back</a>
+                    </div>
                     <div class="mb-3">
                         <button class="btn btn-small btn-success" type="submit">Submit</button>
                     </div>

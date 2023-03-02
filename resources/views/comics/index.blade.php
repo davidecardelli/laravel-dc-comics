@@ -8,6 +8,9 @@
                     @include('includes.card')
                 @endforeach
             </div>
+            <div>
+                <a href="{{ route('comics.create') }}" class="btn btn-primary mt-3">Add Comic</a>
+            </div>
         </div>
     </main>
 @endsection
