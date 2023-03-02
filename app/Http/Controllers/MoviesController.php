@@ -50,8 +50,8 @@ class MoviesController extends Controller
      */
     public function show(string $id)
     {
-        $comics = Movie::findOrFail($id);
-        return view('comics.show', compact('comics'));
+        $comic = Movie::findOrFail($id);
+        return view('comics.show', compact('comic'));
     }
 
     /**
@@ -59,7 +59,8 @@ class MoviesController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $comic = Movie::findOrFail($id);
+        return view('comics.edit', compact('comic'));
     }
 
     /**
@@ -67,7 +68,21 @@ class MoviesController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $data = $request->all();
+
+        $comic = Movie::findOrFail($id);
+        $comic->title = $data['title'];
+        $comic->description = $data['description'];
+        $comic->thumb = $data['thumb'];
+        $comic->price = $data['price'];
+        $comic->series = $data['series'];
+        $comic->sale_date = $data['sale_date'];
+        $comic->type = $data['type'];
+        $comic->artists = $data['artists'];
+        $comic->writers = $data['writers'];
+        $comic->save();
+
+        return to_route('comics.show', $comic->id);
     }
 
     /**
@@ -75,6 +90,8 @@ class MoviesController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $comic = Movie::find($id);
+        $comic->delete();
+        return redirect()->route('comics');
     }
 }

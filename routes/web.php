@@ -30,6 +30,13 @@ Route::post('/comics', [MoviesController::class, 'store'])->name('comics.store')
 
 Route::get('/comics/{id}', [MoviesController::class, 'show'])->name('comics.show');
 
+Route::get('/comics/{id}/edit', [MoviesController::class, 'edit'])->name('comics.edit');
+
+Route::put('/comics/{id}', [MoviesController::class, 'update'])->name('comics.update');
+
+Route::delete('/comics/{id}', [MoviesController::class, 'destroy'])->name('comics.destroy');
+
+
 Route::get('/movies', function () {
     return view('movies');
 })->name('movies');
